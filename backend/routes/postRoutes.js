@@ -17,7 +17,7 @@ router.post('/posts', authenticateToken, async (req, res) => {
 });
 
 // Get all posts
-router.get('/posts', authenticateToken, async (req, res) => {
+router.get('/posts', async (req, res) => {
   try {
     const posts = await Post.find();
     res.status(200).json(posts);
