@@ -27,7 +27,7 @@ router.get('/posts', async (req, res) => {
 });
 
 // Get a single post by id
-router.get('/posts/:id', authenticateToken, async (req, res) => {
+router.get('/posts/:id', async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (!post) {
